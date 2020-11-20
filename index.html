@@ -8,56 +8,6 @@
 <body>
     <canvas id="gameCanvas" width="800" height="600"></canvas>
 
-    <script>
-        let ballX = 75;
-        let ballY = 75;
-        let ballSpeedX = 5;
-        let ballSpeedY = 7;
-
-        let canvas, canvasContext;
-
-        window.onload = function() {
-            canvas = document.getElementById('gameCanvas');
-            canvasContext = canvas.getContext('2d');
-
-            let framesPerSecond = 30;
-            setInterval(updateAll, 1000/framesPerSecond);
-
-
-        };
-
-        function updateAll() {
-            // Ball Y-axis
-            ballY += ballSpeedY;
-
-            if(ballY < 0){
-                ballSpeedY *= -1;
-            }
-            if(ballY > canvas.height){
-                ballSpeedY *= -1;
-            }
-
-            // Ball X-axis
-            ballX += ballSpeedX;
-
-            if(ballX < 0){
-                ballSpeedX *= -1;
-            }
-            if(ballX > canvas.width){
-                ballSpeedX *= -1;
-            }
-
-            // Fill Canvas Rectangle
-            canvasContext.fillStyle = 'black';
-            canvasContext.fillRect(0,0, canvas.width, canvas.height);
-
-            // Fill Canvas ball
-            canvasContext.fillStyle = 'white';
-            canvasContext.beginPath();
-            canvasContext.arc(ballX,ballY, 10, 0,Math.PI*2, true);
-            canvasContext.fill();
-        }
-
-    </script>
+    <script src="app.js"></script>
 </body>
 </html>
